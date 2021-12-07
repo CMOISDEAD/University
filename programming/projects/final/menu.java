@@ -33,7 +33,7 @@ class menu {
   public static void main(String args[]) {
     ArrayList<Question> optionList = new ArrayList<Question>();
     optionList.add(new Question("Universidad"));
-    optionList.add(new Question("Profesores"));
+    optionList.add(new Question("Profesor"));
     optionList.add(new Question("Estudiantes"));
     optionList.add(new Question("Programas"));
     int answer = parseOptions(optionList);
