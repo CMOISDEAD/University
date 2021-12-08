@@ -7,16 +7,25 @@ import java.util.ArrayList;
 public class Programa {
 
   private String nombre;
+  private String nombreFacultad;
   private int creditos;
   private int numeroEstudiantesRegistrados;
   private ArrayList<Curso> listaCursos;
+  private ArrayList<Estudiante> listaEstudiantes;
 
   public Programa(
-      String nombre, int creditos, int numeroEstudiantesRegistrados, ArrayList<Curso> listaCursos) {
+      String nombre,
+      int creditos,
+      int numeroEstudiantesRegistrados,
+      ArrayList<Curso> listaCursos,
+      String nombreFacultad,
+      ArrayList<Estudiante> listaEstudiantes) {
     this.nombre = nombre;
     this.creditos = creditos;
     this.numeroEstudiantesRegistrados = numeroEstudiantesRegistrados;
     this.listaCursos = listaCursos;
+    this.nombreFacultad = nombreFacultad;
+    this.listaEstudiantes = seleccionarEstudiantes(listaEstudiantes, nombre);
   }
 
   public void setNombre(String nombre) {
@@ -47,6 +56,18 @@ public class Programa {
     return listaCursos;
   }
 
+  public String getNombreFacultad() {
+    return nombreFacultad;
+  }
+
+  public ArrayList<Estudiante> getListaEstudiantes() {
+    return listaEstudiantes;
+  }
+
+  public void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+    this.listaEstudiantes = listaEstudiantes;
+  }
+
   /* [> Eliminar curso  <] */
   public void removerCurso(String nombre) {
     ArrayList<Curso> nuevoArreglo = new ArrayList<Curso>();
@@ -70,5 +91,16 @@ public class Programa {
     if (centinela != true) {
       this.listaCursos.add(nuevoCurso);
     }
+  }
+
+  /* [> Este metodo selecciona solo los Estudiante que corresponden a este Programa <] */
+  public static ArrayList<Estudiante> seleccionarEstudiantes(ArrayList<Estudiante> listaEstudiantes, String nombre) {
+    ArrayList<Estudiante> retorno = new ArrayList<Estudiante>();
+    for (int i = 0; i < listaEstudiantes.size(); i++) {
+      if (listaEstudiantes.get(i).getPrograma() == nombre) {
+        retorno.add(listaEstudiantes.get(i));
+      }
+    }
+    return retorno;
   }
 }

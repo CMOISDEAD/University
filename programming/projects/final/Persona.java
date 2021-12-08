@@ -2,7 +2,6 @@
  * @author : camilo
  * @created : 2021-12-05
  */
-import java.time.LocalDate;
 
 public class Persona {
 
@@ -13,7 +12,7 @@ public class Persona {
   private int identificacion;
   private int telefono;
   private String rh;
-  private LocalDate fechaNacimiento;
+  private int edad;
   private String genero;
   private String tipoVinculacion;
 
@@ -25,7 +24,7 @@ public class Persona {
       int identificacion,
       int telefono,
       String rh,
-      LocalDate fechaNacimiento,
+      int edad,
       String genero,
       String tipoVinculacion) {
     this.nombre = nombre;
@@ -35,7 +34,7 @@ public class Persona {
     this.identificacion = identificacion;
     this.telefono = telefono;
     this.rh = rh;
-    this.fechaNacimiento = fechaNacimiento;
+    this.edad = edad;
     this.genero = genero;
     this.tipoVinculacion = tipoVinculacion;
   }
@@ -96,12 +95,12 @@ public class Persona {
     return rh;
   }
 
-  public void setFechaNacimiento(LocalDate fechaNacimiento) {
-    this.fechaNacimiento = fechaNacimiento;
+  public void setEdad(int edad) {
+    this.edad = edad;
   }
 
-  public LocalDate getFechaNacimiento() {
-    return fechaNacimiento;
+  public int getEdad() {
+    return edad;
   }
 
   public void setGenero(String genero) {

@@ -11,17 +11,6 @@ public class Facultad {
   private ArrayList<Programa> listaProgramas;
   private ArrayList<Salon> listaSalones;
 
-  /* [> Este metodo selecciona solo los salones que corresponden a s facultad <] */
-  public static ArrayList<Salon> seleccionar(ArrayList<Salon> listaSalones, String nombre) {
-    ArrayList<Salon> retorno = new ArrayList<Salon>();
-    for (int i = 0; i < listaSalones.size(); i++) {
-      if (listaSalones.get(i).getFacultad() == nombre) {
-        retorno.add(listaSalones.get(i));
-      }
-    }
-    return retorno;
-  }
-
   public Facultad(
       String nombre,
       int numeroProgramas,
@@ -29,8 +18,8 @@ public class Facultad {
       ArrayList<Salon> listaSalones) {
     this.nombre = nombre;
     this.numeroProgramas = numeroProgramas;
-    this.listaProgramas = listaProgramas;
-    this.listaSalones = seleccionar(listaSalones, nombre);
+    this.listaProgramas = seleccionarPrograma(listaProgramas, nombre);
+    this.listaSalones = seleccionarSalon(listaSalones, nombre);
   }
 
   public void setNombre(String nombre) {
@@ -64,7 +53,7 @@ public class Facultad {
   public ArrayList<Salon> getListaSalones() {
     return listaSalones;
   }
-
+  
   /* [>Remover programa de listaProgramas  <] */
   public void removerPrograma(String nombre) {
     ArrayList<Programa> nuevoArreglo = new ArrayList<Programa>();
@@ -88,5 +77,28 @@ public class Facultad {
     if (centinela != true) {
       this.listaProgramas.add(nuevoPrograma);
     }
+  }
+
+  /* [> Este metodo selecciona solo los salones que corresponden a esta facultad <] */
+  public static ArrayList<Salon> seleccionarSalon(ArrayList<Salon> listaSalones, String nombre) {
+    ArrayList<Salon> retorno = new ArrayList<Salon>();
+    for (int i = 0; i < listaSalones.size(); i++) {
+      if (listaSalones.get(i).getFacultad() == nombre) {
+        retorno.add(listaSalones.get(i));
+      }
+    }
+    return retorno;
+  }
+
+  /* [> Este metodo selecciona solo los programas que corresponden a esta facultad <] */
+  public static ArrayList<Programa> seleccionarPrograma(
+      ArrayList<Programa> listaProgramas, String nombre) {
+    ArrayList<Programa> retorno = new ArrayList<Programa>();
+    for (int i = 0; i < listaProgramas.size(); i++) {
+      if (listaProgramas.get(i).getNombreFacultad() == nombre) {
+        retorno.add(listaProgramas.get(i));
+      }
+    }
+    return retorno;
   }
 }
