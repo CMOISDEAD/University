@@ -13,7 +13,7 @@ class menu {
   public static int parseOptions(ArrayList<Question> optionList) {
     String retorno = "";
     for (int i = 0; i < optionList.size(); i++) {
-      String cadena = i + 1 + ") " + optionList.get(i).getMessage() + "\n";
+      String cadena = "[" + i + "] " + optionList.get(i).getMessage() + "\n";
       retorno += cadena;
     }
     return questioner(retorno);
@@ -21,7 +21,7 @@ class menu {
 
   public static int questioner(String optionList) {
     prnt(optionList);
-    prnt("Select an option: ");
+    prnt("┌─(Selecciona una opcion)-[~]\n└──$ ");
     int retorno = sc.nextInt();
     return retorno;
   }
@@ -31,12 +31,34 @@ class menu {
   }
 
   public static void main(String args[]) {
-    ArrayList<Question> optionList = new ArrayList<Question>();
-    optionList.add(new Question("Universidad"));
-    optionList.add(new Question("Profesores"));
-    optionList.add(new Question("Estudiantes"));
-    optionList.add(new Question("Programas"));
-    int answer = parseOptions(optionList);
-    optionList.get(answer - 1).questionAction();
+    int answer = 0;
+    Header header = new Header();
+    header.showHeader();
+    while (answer != 4) {
+      ArrayList<Question> optionList = new ArrayList<Question>();
+      optionList.add(new Question("Datos Globales"));
+      optionList.add(new Question("Datos Estudiantes"));
+      optionList.add(new Question("Datos Docente"));
+      optionList.add(new Question("Datos Programa"));
+      optionList.add(new Question("Kill D.Ø.Ø.M"));
+      answer = parseOptions(optionList);
+      if (answer < optionList.size()) {
+        switch (answer) {
+          case 0: System.out.println("global");
+                  break;
+          case 1: System.out.println("es");
+                  break;
+          case 2: System.out.println("doc");
+                  break;
+          case 3:System.out.println("pro");
+                  break;
+          case 4:System.out.println("doom");
+                  break;
+        }
+      }else{
+        System.out.println("err: 001 - 6ece7a48-ba14-435b-aa55-bfaeb4da1f1c");
+        break;
+      }
+    }
   }
 }

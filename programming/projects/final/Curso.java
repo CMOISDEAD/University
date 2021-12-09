@@ -7,11 +7,17 @@ public class Curso {
   private String nombre;
   private int creditos;
   private int codigo;
+  private int numeroEstudiantes;
+  // private ArrayList<Estudiante> listaEstudiantes;
+  private String facultad;
 
-  public Curso(String nombre, int creditos, int codigo) {
+  public Curso(String nombre, int creditos, int codigo, int numeroEstudiantes, String facultad) {
     this.nombre = nombre;
     this.creditos = creditos;
     this.codigo = codigo;
+    this.numeroEstudiantes = numeroEstudiantes;
+    this.facultad = facultad;
+    // this.listaEstudiantes = listaEstudiantes;
   }
 
   public void setNombre(String nombre) {
@@ -36,5 +42,29 @@ public class Curso {
 
   public int getCodigo() {
     return codigo;
+  }
+
+  public void setNumeroEstudiantes(int numero) {
+    this.numeroEstudiantes = numero;
+  }
+
+  public int getNumeroEstudiantes() {
+    return numeroEstudiantes;
+  }
+
+/*   public ArrayList<Estudiante> getListaEstudiantes() {
+ *     return listaEstudiantes;
+ *   }
+ *
+ *   public void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+ *     this.listaEstudiantes = listaEstudiantes;
+ *   } */
+
+  public void setFacultad(String facultad) {
+    this.facultad = facultad;
+  }
+
+  public String getFacultad() {
+    return facultad;
   }
 }

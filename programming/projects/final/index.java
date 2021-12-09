@@ -3,8 +3,26 @@
  * @created : 2021-12-06
  */
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class index {
+  public static Scanner sc = new Scanner(System.in);
+
+  public static int parseOptions(ArrayList<Question> optionList) {
+    String retorno = "";
+    for (int i = 0; i < optionList.size(); i++) {
+      String cadena = "[" + i + "] " + optionList.get(i).getMessage() + "\n";
+      retorno += cadena;
+    }
+    System.out.println(retorno);
+    return questioner("Selecciona una opcion");
+  }
+
+  public static int questioner(String message) {
+    System.out.print("┌─(" + message + ")-[~]\n└──$ ");
+    int retorno = sc.nextInt();
+    return retorno;
+  }
 
   public static void main(String[] args) {
     /* Intanciacion de las listas  */
@@ -21,7 +39,7 @@ public class index {
             "Gomez Salamanca",
             "fernando.gomezs@uqvirtual.edu.co",
             "calle 19 #23-06",
-            1024495489,
+            1024495480,
             310458962,
             "O+",
             18,
@@ -29,14 +47,15 @@ public class index {
             "Estudiante",
             3,
             2304,
-            "Comunicacion Social");
+            "Comunicacion Social",
+            listaCursos);
     Estudiante E2 =
         new Estudiante(
             "Laura Camila",
             "Gutierrez Parra",
             "laurac.gutierrezp@uqvirtual.edu.co",
             "calle 54 #25-56",
-            105552365,
+            1004917303,
             310458962,
             "A+",
             22,
@@ -44,14 +63,15 @@ public class index {
             "Estudiante",
             1,
             5454,
-            "Ingenieria de Sistemas");
+            "Ingenieria de Sistemas",
+            listaCursos);
     Estudiante E3 =
         new Estudiante(
             "Camilo",
             "Araque Cano",
             "camilo.araquec@uqvirtual.edu.co",
             "calle 18 #29-10",
-            57878756,
+            57878524,
             314948484,
             "O-",
             29,
@@ -59,14 +79,15 @@ public class index {
             "estudiante",
             10,
             4845,
-            "Administracion P");
+            "Administracion P",
+            listaCursos);
     Estudiante E4 =
         new Estudiante(
             "Dayana",
             "Paez aguirre",
             "dayana.paeza@uqvirtual.edu.co",
             "manzana 3 casa 12",
-            145267852,
+            145210252,
             315458962,
             "O+",
             16,
@@ -74,14 +95,15 @@ public class index {
             "Estudiante",
             5,
             4579,
-            "Humanidades P");
+            "Humanidades P",
+            listaCursos);
     Estudiante E5 =
         new Estudiante(
-            "Julian David",
+            "anakin",
             "Cruz mora",
             "juliand.cruzm@uqvirtual.edu.co",
             "calle 25 #10-02",
-            1000245800,
+            1001245800,
             311958962,
             "A+",
             24,
@@ -89,14 +111,15 @@ public class index {
             "Estudiante",
             2,
             2811,
-            "Economia P");
+            "Economia P",
+            listaCursos);
     Estudiante E6 =
         new Estudiante(
             "Camilo Esteban",
             "Davila Sierra",
             "camiloe.davilas@uqvirtual.edu.co",
             "calle 25 #10-02",
-            1000245800,
+            1004917304,
             311958962,
             "A+",
             18,
@@ -104,7 +127,72 @@ public class index {
             "Estudiante",
             2,
             2811,
-            "Ingenieria de Sistemas");
+            "Ingenieria de Sistemas",
+            listaCursos);
+      Estudiante E7 =
+        new Estudiante(
+            "MF Doom",
+            "Gomez Salamanca",
+            "fernando.gomezs@uqvirtual.edu.co",
+            "calle 19 #23-06",
+            1291495489,
+            310458962,
+            "O+",
+            18,
+            "Femenino",
+            "Estudiante",
+            3,
+            2304,
+            "Comunicacion Social",
+            listaCursos);
+      Estudiante E8 =
+        new Estudiante(
+            "Viktor Vaungh",
+            "Araque Cano",
+            "camilo.araquec@uqvirtual.edu.co",
+            "calle 18 #29-10",
+            578872256,
+            314948484,
+            "O-",
+            29,
+            "Femenino",
+            "estudiante",
+            10,
+            4845,
+            "Administracion P",
+            listaCursos);
+      Estudiante E9 =
+        new Estudiante(
+            "zack",
+            "Paez aguirre",
+            "dayana.paeza@uqvirtual.edu.co",
+            "manzana 3 casa 12",
+            1526782252,
+            315458962,
+            "O+",
+            16,
+            "Masculino",
+            "Estudiante",
+            5,
+            4579,
+            "Humanidades P",
+            listaCursos);
+      Estudiante E10 =
+        new Estudiante(
+            "Sthephen",
+            "Cruz mora",
+            "juliand.cruzm@uqvirtual.edu.co",
+            "calle 25 #10-02",
+            1000245200,
+            311958962,
+            "A+",
+            24,
+            "Femenino",
+            "Estudiante",
+            2,
+            2811,
+            "Economia P",
+            listaCursos);
 
     listaEstudiantes.add(E1);
     listaEstudiantes.add(E2);
@@ -112,6 +200,10 @@ public class index {
     listaEstudiantes.add(E4);
     listaEstudiantes.add(E5);
     listaEstudiantes.add(E6);
+    listaEstudiantes.add(E7);
+    listaEstudiantes.add(E8);
+    listaEstudiantes.add(E9);
+    listaEstudiantes.add(E10);
 
     /*  Agrego los salones */
     Salon s305 = new Salon("Laboratorio Sistemas", "D4 305", 305, "Ingenieria");
@@ -127,14 +219,14 @@ public class index {
     listaSalones.add(s202);
 
     /* Agrego los cursos  */
-    Curso matematicas = new Curso("Matematicas", 15, 01);
-    Curso calculo = new Curso("Calculo", 18, 02);
-    Curso algebra = new Curso("algebra", 15, 03);
-    Curso lectura = new Curso("lectura", 10, 04);
-    Curso fisica = new Curso("fisica", 20, 05);
+    Curso matematicas = new Curso("Matematicas", 15, 01, 1,"Ingenieria");
+    Curso calculo = new Curso("Calculo", 18, 02, 2, "Ingenieria");
+    Curso algebra = new Curso("algebra", 15, 03, 3, "Ingenieria");
+    Curso lectura = new Curso("lectura", 10, 04, 4, "Ciencias Basicas");
+    Curso fisica = new Curso("fisica", 20, 05, 5, "Humanidades");
 
     /* Curso extra  */
-    Curso narracion = new Curso("Narracion", 20, 05);
+    Curso narracion = new Curso("Narracion", 20, 05, 31, "Ciencias Basicas");
 
     listaCursos.add(matematicas);
     listaCursos.add(calculo);
@@ -145,31 +237,35 @@ public class index {
     /* Agrego los programas  */
     Programa ingSistemas =
         new Programa(
-            "Ingenieria de Sistemas", 10, 100, listaCursos, "Ingenieria", listaEstudiantes);
+            "Ingenieria de Sistemas", 10, 01, 100, listaCursos, "Ingenieria", listaEstudiantes);
     Programa administracionP =
-        new Programa("Administracion P", 10, 100, listaCursos, "Administracion", listaEstudiantes);
+        new Programa("Administracion P", 10, 02, 100, listaCursos, "Administracion", listaEstudiantes);
     Programa humanidadesP =
-        new Programa("Humanidades P", 10, 100, listaCursos, "Humanidades", listaEstudiantes);
+        new Programa("Humanidades P", 10, 03, 100, listaCursos, "Humanidades", listaEstudiantes);
     Programa comunicacionSocial =
         new Programa(
-            "Comunicacion Social", 10, 100, listaCursos, "Ciencias Basicas", listaEstudiantes);
+            "Comunicacion Social", 10, 04, 100, listaCursos, "Ciencias Basicas", listaEstudiantes);
     Programa economiaP =
-        new Programa("Economia P", 10, 100, listaCursos, "Economia", listaEstudiantes);
+        new Programa("Economia P", 10, 05, 100, listaCursos, "Economia", listaEstudiantes);
+    Programa ingCivil =
+        new Programa(
+            "Ingenieria Civil", 10, 06, 100, listaCursos, "Ingenieria", listaEstudiantes);
 
     /* Programa extra  */
     Programa cuantica =
-        new Programa("Fisica Cuantica", 10, 100, listaCursos, "Ingenieria", listaEstudiantes);
+        new Programa("Fisica Cuantica", 10, 07, 100, listaCursos, "Ingenieria", listaEstudiantes);
 
     listaProgramas.add(ingSistemas);
     listaProgramas.add(administracionP);
     listaProgramas.add(humanidadesP);
     listaProgramas.add(comunicacionSocial);
     listaProgramas.add(economiaP);
+    listaProgramas.add(ingCivil);
 
     /* Eliminar curso de un programa */
-    economiaP.removerCurso(matematicas.getNombre());
+    // economiaP.removerCurso(matematicas.getNombre());
     /* Añadir un curso a un programa */
-    economiaP.añadirCurso(narracion);
+    // economiaP.añadirCurso(narracion);
 
     /* Imprimo los nombres de los cursos de cada programa  */
 
@@ -191,27 +287,48 @@ public class index {
     /* Añadir programa a la facultad de economia */
     // economia.añadirPrograma(cuantica);
 
-    /* Imprimo las Facultades  */
-    int numeroEstudiantesF = 0;
-    int numeroEstudiantesH = 0;
-    double edadPromedioF = 0;
-    double edadPromedioH = 0;
+    /* Proyecto finalizado B)  */
+    PrimerPunto primerPunto = new PrimerPunto(listaFacultad);
+    // primerPunto.RedAndGold();
 
-    for (int i = 0; i < listaFacultad.size(); i++) {
-      for (int j = 0; j < listaFacultad.get(i).getListaProgramas().size(); j++) {
-        System.out.println(listaFacultad.get(i).getNombre()+ ": \n"+ "\t "+ "└──" + listaFacultad.get(i).getListaProgramas().get(j).getNombre()+ ":");
-        for (int k = 0; k < listaFacultad.get(i).getListaProgramas().get(j).getListaEstudiantes().size();k++) {
-          if (listaFacultad.get(i).getListaProgramas().get(j).getListaEstudiantes().get(k).getGenero().toUpperCase().equals("FEMENINO")) {
-            edadPromedioF += listaFacultad.get(i).getListaProgramas().get(j).getListaEstudiantes().get(k).getEdad();
-            numeroEstudiantesF += 1;
-          }else{
-            edadPromedioH += listaFacultad.get(i).getListaProgramas().get(j).getListaEstudiantes().get(k).getEdad();
-            numeroEstudiantesH += 1;
-          }
+    // SegundoPunto segundoPunto = new SegundoPunto(listaFacultad, 1004917304);
+    // segundoPunto.RedAndGold();
+    
+    TercerPunto tercerPunto = new TercerPunto(listaFacultad, 1024495480);
+    // tercerPunto.RedAndGold();
+    
+    CuartoPunto cuartoPunto = new CuartoPunto(listaProgramas, 04);
+    // cuartoPunto.RedAndGold();
+
+    int answer = 0;
+    Header header = new Header();
+    header.showHeader();
+    while (answer != 4) {
+      ArrayList<Question> optionList = new ArrayList<Question>();
+      optionList.add(new Question("Datos Globales"));
+      optionList.add(new Question("Datos Docente"));
+      optionList.add(new Question("Datos Estudiantes"));
+      optionList.add(new Question("Datos Programa"));
+      optionList.add(new Question("Kill D.Ø.Ø.M"));
+      answer = parseOptions(optionList);
+      if (answer < optionList.size()) {
+        switch (answer) {
+          case 0: primerPunto.RedAndGold();
+                  break;
+          case 1: primerPunto.RedAndGold();
+                  break;
+          case 2: tercerPunto.setCodigo(questioner("Ingresa un documento"));
+                  tercerPunto.RedAndGold();
+                  break;
+          case 3: cuartoPunto.setCodigo(questioner("Ingresa codigo del programa"));
+                  cuartoPunto.RedAndGold();
+                  break;
+          case 4: System.out.println("Kill D.Ø.Ø.M"); 
+                  break;
         }
-        // edadPromedio = edadPromedio / listaFacultad.get(i).getListaProgramas().get(j).getListaEstudiantes().size();
-        System.out.println("\t \t" + "├──" + "Feminino" + "\n\t" + "\t│\t└──Cantidad: Promedio:\n" + "\t\t│\t\t└──" + numeroEstudiantesF + "\t└──" + edadPromedioF);
-        System.out.println("\t \t" + "└──" + "Masculino" + "\n\t" + "\t\t└──Cantidad: Promedio:\n" + "\t\t\t\t└──" + numeroEstudiantesH + "\t└──" + edadPromedioH);
+      }else{
+        System.out.println("err: 001 - 6ece7a48-ba14-435b-aa55-bfaeb4da1f1c");
+        break;
       }
     }
   }

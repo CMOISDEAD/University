@@ -2,11 +2,14 @@
  * @author : camilo
  * @created : 2021-12-06
  */
+import java.util.ArrayList;
+
 public class Estudiante extends Persona {
 
   private int semestre;
   private int codigoEstudiante;
   private String programa;
+  private ArrayList<Curso> listaCursos;
 
   public Estudiante(
       String nombre,
@@ -21,7 +24,8 @@ public class Estudiante extends Persona {
       String tipoVinculacion,
       int semestre,
       int codigoEstudiante,
-      String programa) {
+      String programa,
+      ArrayList<Curso> listaCursos) {
     super(
         nombre,
         apellido,
@@ -36,6 +40,7 @@ public class Estudiante extends Persona {
     this.semestre = semestre;
     this.codigoEstudiante = codigoEstudiante;
     this.programa = programa;
+    this.listaCursos = listaCursos;
   }
 
   public void setSemestre(int semestre) {
@@ -60,5 +65,9 @@ public class Estudiante extends Persona {
 
   public void setPrograma(String programa) {
     this.programa = programa;
+  }
+
+  public ArrayList<Curso> getListaCursos() {
+    return listaCursos;
   }
 }

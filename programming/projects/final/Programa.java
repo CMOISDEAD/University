@@ -9,6 +9,7 @@ public class Programa {
   private String nombre;
   private String nombreFacultad;
   private int creditos;
+  private int codigo;
   private int numeroEstudiantesRegistrados;
   private ArrayList<Curso> listaCursos;
   private ArrayList<Estudiante> listaEstudiantes;
@@ -16,12 +17,14 @@ public class Programa {
   public Programa(
       String nombre,
       int creditos,
+      int codigo,
       int numeroEstudiantesRegistrados,
       ArrayList<Curso> listaCursos,
       String nombreFacultad,
       ArrayList<Estudiante> listaEstudiantes) {
     this.nombre = nombre;
     this.creditos = creditos;
+    this.codigo = codigo;
     this.numeroEstudiantesRegistrados = numeroEstudiantesRegistrados;
     this.listaCursos = listaCursos;
     this.nombreFacultad = nombreFacultad;
@@ -44,6 +47,13 @@ public class Programa {
     return creditos;
   }
 
+  public void setCodigo(int codigo) {
+    this.codigo = codigo;
+  }
+
+  public int getCodigo() {
+    return codigo;
+  }
   public void setNumeroEstudiantesRegistrados(int numeroEstudiantesRegistrados) {
     this.numeroEstudiantesRegistrados = numeroEstudiantesRegistrados;
   }
